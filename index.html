@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/CreateFormVisit.css" />
+    <link rel="stylesheet" href="./assets/css/cards.css" />
+    <link rel="stylesheet" href="assets/css/filter.css" />
+    <link rel="stylesheet" href="assets/css/adaptive.css" />
+    <title>Pulse</title>
+  </head>
+  <body class="wrapper">
+    <div class="background-overlay"></div>
+    <header class="header">
+      <div class="container">
+        <div class="header__top-line">
+          <div class="header__logo">
+            <a href="#">Pulse</a>
+          </div>
+          <nav class="header__navbar">
+            <ul class="header__navbar-menu">
+              <li class="header__navbar-item">
+                <a href="#" class="header__navbar-link">Home</a>
+              </li>
+              <li class="header__navbar-item">
+                <a href="#" class="header__navbar-link">About us</a>
+              </li>
+              <li class="header__navbar-item">
+                <a href="#" class="header__navbar-link">Services</a>
+              </li>
+              <li class="header__navbar-item">
+                <a href="#" class="header__navbar-link">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__buttons">
+            <div class="header__buttons-Sign-in">
+              <a href="#" id="openModalButton">Sign in</a>
+            </div>
+            <div class="header__buttons-Visit">
+              <button class="none" id="btnVisit">Make an appointment</button>
+            </div>
+          </div>
+          <div class="header__img">
+            <img src="./assets/img/header-img.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="homePage container">
+      <div class="homePage__text">
+        <h2>Your health is our priority</h2>
+        <p>
+          We understand that each patient is unique, so we develop an individual
+          treatment plan for each one. Our doctors listen to your needs and find
+          optimal solutions for your health.
+        </p>
+        <a href="#" id="appointmentModal">Make an appointment</a>
+      </div>
+      <div class="homePage__background"></div>
+      <div class="homePage__background-absolute">
+        <img src="./assets/img/icons/pulse-svg.svg" alt="" />
+      </div>
+    </section>
+    <div class="modal" id="loginUser">
+      <div class="center">
+        <div class="modal-dialog">
+          <div class="modal__header">
+            <p>Let's get started</p>
+          </div>
+          <button type="button" class="btn-close">&times;</button>
+          <div class="modal__body">
+            <form class="userInfo">
+              <input
+                type="email"
+                class="form-email"
+                id="userEmail"
+                placeholder="Your login"
+              />
+              <input
+                type="password"
+                id="userPassword"
+                class="form-control"
+                placeholder="Your password"
+              />
+              <button type="button" id="userSingIn" class="userSingIn">
+                Sign in
+              </button>
+              <div id="errorUser" class="error-message">
+                Invalid email or password.
+              </div>
+            </form>
+            <form action="" class="create-form-visit form none">
+              <ul class="form__select-menu">
+                <li class="select doctor select-doctor">Choose a doctor</li>
+                <ul class="form__select-menu--deep">
+                  <li class="doctor" data-doctor="no-doctor-select">
+                    Choose a doctor
+                  </li>
+                  <li class="doctor" data-doctor="Cardiologist">
+                    Cardiologist
+                  </li>
+                  <li class="doctor" data-doctor="Dentist">Dentist</li>
+                  <li class="doctor" data-doctor="Therapist">Therapist</li>
+                </ul>
+              </ul>
+              <ul class="form__select-menu">
+                <li class="select doctor status" id="status">Status</li>
+                <ul class="status-deep-menu">
+                  <li class="doctor" data-urgency="Status">Status</li>
+                  <li class="doctor" data-urgency="Open">Open</li>
+                  <li class="doctor" data-urgency="Done">Done</li>
+                </ul>
+              </ul>
+              <div class="form__fullForm">
+                <div class="form__general-fields">
+                  <input id="fullName" type="text" placeholder="Full name" />
+                  <input
+                    id="goal"
+                    type="text"
+                    placeholder="The purpose of the visit"
+                  />
+                  <input
+                    id="desc"
+                    type="text"
+                    placeholder="Brief description of the visit"
+                  />
+                  <ul class="form__select-menu">
+                    <li class="select doctor urgently" id="urgently">
+                      Urgently
+                    </li>
+                    <ul class="urgently-deep-menu">
+                      <li class="doctor" data-urgency="Urgently">Urgently</li>
+                      <li class="doctor" data-urgency="High">High</li>
+                      <li class="doctor" data-urgency="Normal">Normal</li>
+                      <li class="doctor" data-urgency="Low">Low</li>
+                    </ul>
+                  </ul>
+                </div>
+                <div class="form__custom-fields">
+                  <div class="custom-fields visible" id="fields__cardiologist">
+                    <div class="form__press">
+                      <input
+                        id="pressure"
+                        type="text"
+                        placeholder="Normal pressure"
+                      />
+                      <input
+                        id="massIndex"
+                        type="text"
+                        placeholder="Body mass index"
+                      />
+                    </div>
+                    <input
+                      id="heartSystem"
+                      type="text"
+                      placeholder="Transferred diseases of the cardiovascular system"
+                    />
+                    <input id="ageCardiologist" type="text" placeholder="Age" />
+                  </div>
+                  <div class="custom-fields visible" id="fields__dentist">
+                    <div class="wrapper-date">
+                      <label for="date" id="label-date"
+                        >Date of last visit</label
+                      >
+                      <input
+                        id="date"
+                        type="date"
+                        placeholder="Date of last visit"
+                      />
+                    </div>
+                  </div>
+                  <div class="custom-fields visible" id="fields__therapist">
+                    <input id="ageTherapist" type="text" placeholder="Age" />
+                  </div>
+                </div>
+                <div class="wrapper-btn-visit">
+                  <span id="createVisit" type="submit" class="main-button"
+                    >Create a visit</span
+                  >
+                  <span id="editVisit" type="submit" class="main-button"
+                    >Edit a visit</span
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="homePage-open container">
+      <div class="welcomeUser">
+        <h2>Welcome!</h2>
+        <p>
+          Glad to see you again in your personal account. Here you can easily
+          manage your account and access your personal information.
+        </p>
+      </div>
+      <div class="workspace container">
+        <div class="filter">
+          <div class="filter-mobile">filter</div>
+          <h2>Filter</h2>
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="search by doctor or name"
+            />
+            <button id="search-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+               
+                <path
+                  d="M11 20C13.3869 20 15.6761 19.0518 17.364 17.364C19.0518 15.6761 20 13.3869 20 11C20 8.61305 19.0518 6.32387 17.364 4.63604C15.6761 2.94821 13.3869 2 11 2C8.61305 2 6.32387 2.94821 4.63604 4.63604C2.94821 6.32387 2 8.61305 2 11C2 13.3869 2.94821 15.6761 4.63604 17.364C6.32387 19.0518 8.61305 20 11 20ZM18.93 20.69C19.46 22.29 20.67 22.45 21.6 21.05C22.45 19.77 21.89 18.72 20.35 18.72C19.21 18.71 18.57 19.6 18.93 20.69Z"
+                  stroke="black"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="filter-category">
+            <button class="all">
+              search by status
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+            <div class="filter-options">
+              <a>All statuses</a>
+              <a>Open</a>
+              <a>Done</a>
+            </div>
+          </div>
+          <div class="filter-category">
+            <button class="all">
+              the urgency of the visit
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+            <div class="filter-options">
+              <a>All urgency</a>
+              <a>High</a>
+              <a>Normal</a>
+              <a>Low</a>
+            </div>
+          </div>
+        </div>
+          <div class="cards columns">
+            <div class="noCards visible">No items have been added</div>
+          </div>
+      </div>
+    </section>
+
+    <script src="assets/js/filter.js"></script>
+    <script type="module" src="./assets/js/login.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>
